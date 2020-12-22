@@ -19,11 +19,4 @@ class Team
     @players << player
   end
 
-  def players_by_position(category)
-    sorted = []
-    @players.find_all do |player|
-      sorted << player if player.position == category
-    end
-    sorted
-  end
 end

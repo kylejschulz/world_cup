@@ -20,17 +20,16 @@ class World_Cuptest < Minitest::Test
   end
 
   def test_it_exists
-
     assert_instance_of WorldCup, @world_cup
   end
 
   def test_it_has_attributes
-
     assert_equal 2018, @world_cup.year
     assert_equal [@france, @croatia], @world_cup.teams
   end
 
-  def test_active_players_by_positioin
+  def test_active_players_by_positoin
+    skip
     assert_equal [@pogba, @modric], @world_cup.active_players_by_position("midfielder")# => [#<Player:0x00007f936c035eb0...>, #<Player:0x00007f936a3595f8...>]
 
     @croatia.eliminated = true
@@ -39,12 +38,15 @@ class World_Cuptest < Minitest::Test
   end
 
   def test_all_players_by_position
-    empyt_hash = {
+    skip
+    hash = {
     "forward" =>    [@mbappe],
     "midfielder" => [@pogba, @modric],
     "defender" =>   [@vida]
   }
 
-  assert_equal empyt_hash, @world_cup.all_players_by_position
+  assert_equal hash, @world_cup.all_players_by_position
   end
+
 end
+# =>
